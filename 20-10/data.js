@@ -58,6 +58,7 @@ const result = data.map((item) => {
         <div class="content">
             <h4>${item.name}</h4>
             <p>${item.message}</p>
+            <button class="show-wrapper">Xem ảnh</button>
         </div>
     </div>
     `
@@ -67,4 +68,20 @@ ring.innerHTML = res
 const listImg = document.querySelectorAll('.img')
 listImg.forEach((item, i) => {
     item.style.backgroundImage = 'url(./img/' + (i + 1) + '.jpg)'
+})
+
+//Wrapper
+const listBtnImg = document.querySelectorAll('.show-wrapper')
+const wrapper = document.querySelector('.wrapper')
+const wrapperImg = document.querySelector('.wrapper_img')
+listBtnImg.forEach((item, i) => {
+    item.addEventListener('click', () => {
+        wrapper.classList.toggle('showFlex')
+    })
+})
+wrapper.addEventListener('click', () => {
+    wrapper.classList.remove('showFlex')
+})
+wrapperImg.addEventListener('click', (e) => {
+    e.stopPropagation()
 })
