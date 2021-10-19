@@ -73,10 +73,16 @@ listImg.forEach((item, i) => {
 //Wrapper
 const listBtnImg = document.querySelectorAll('.show-wrapper')
 const wrapper = document.querySelector('.wrapper')
-const wrapperImg = document.querySelector('.wrapper_img')
+const wrapperImg = document.querySelector('.wrapper_img img')
 listBtnImg.forEach((item, i) => {
     item.addEventListener('click', () => {
         wrapper.classList.toggle('showFlex')
+        const urlImg = item.parentElement.parentElement.style.backgroundImage
+        wrapperImg.setAttribute(
+            'src',
+            urlImg.slice(urlImg.indexOf('"') + 1, urlImg.lastIndexOf('"'))
+        )
+        console.log(wrapperImg.getAttribute('src'))
     })
 })
 wrapper.addEventListener('click', () => {
