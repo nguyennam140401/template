@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #f44336;
+    --first-color: #141414;
+    --secondary-color: #337ab7;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Berkshire Swash', Arial;
+}
+.container {
+    padding: 10px 80px;
+}
+
+.header {
+    display: flex;
+    padding: 10px 80px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--first-color);
+}
+.header .logo {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.header .follow {
+    display: flex;
+}
+.header .follow a {
+    margin: 0 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.5rem;
+}
+.header .follow a:hover {
+    color: var(--secondary-color);
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    padding: 10px 80px;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation .nav {
+}
+.navigation .nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.navigation .nav ul li {
+    position: relative;
+    margin-right: 2rem;
+    padding: 1rem 0;
+    color: #777;
+}
+.navigation .nav ul li a {
+    color: #777;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.navigation .nav ul li a::after {
+    position: absolute;
+    content: attr(data-hover);
+    color: var(--primary-color);
+    opacity: 0;
+    transform: scale(1.4);
+    left: 100%;
+    bottom: 100%;
+    /* transform: all 0.3s; */
+    transition: all 0.3s;
+}
+.navigation .nav ul li:hover > a::after {
+    opacity: 1;
+    left: 0;
+    bottom: 0;
+    transform: scale(1);
+}
+.navigation .nav ul li .nav_child {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    padding: 1rem;
+    border: 1px solid #000;
+}
+.navigation .nav ul li:hover .nav_child {
+    display: block;
+}
+
+.navigation .search form {
+    display: flex;
+    align-items: center;
+}
+.navigation .search form button,
+.navigation .search form input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.navigation .search form input {
+    width: 0;
+    transition: 0.3s;
+    transform-origin: right center;
+}
+button {
+    cursor: pointer;
+}
+.navigation .search form button:focus + input {
+    width: 100%;
+    left: 0;
+}
+.section {
+    background-image: url('./images//banner.jpg');
+    background-color: rgba(0, 0, 0, 0.3);
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    flex-direction: column;
+}
+.section .line {
+    margin: 2rem 0;
+}
+.section p {
+    font-size: 1.3rem;
+}
+.section h2 {
+    width: max-content;
+    border: 1px solid #fff;
+    padding: 1rem;
+    text-transform: uppercase;
+    word-spacing: 0.5rem;
+}
+.section button {
+    margin-top: 200px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+}
+.banner {
+    display: flex;
+}
