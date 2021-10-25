@@ -184,8 +184,9 @@ a {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     padding: 0.7rem;
     background-color: var(--third-color);
+    font-size: 1.5rem;
 }
-.footer a {
+.footer p {
     color: var(--second-color);
     text-decoration: none;
 }
